@@ -12,9 +12,12 @@
 <body>
     <h1>People entered:</h1>
     <h2 id="count-el">0</h2>
-    <script>
-        document.getElementById("count-el").innerText = 10;
-    </script>
+    <div class="buttons">
+        <button id="increment-btn" onclick="increment()"> Add passenger</button>
+        <button id="save-btn" onclick="save()"> Save</button>
+    </div>
+    <p id="save-el">Previous entries:</p>
 </body>
+<script src="index.js"></script>
 
 </html>
