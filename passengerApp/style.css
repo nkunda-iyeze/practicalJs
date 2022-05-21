@@ -32,3 +32,13 @@ button {
 #save-btn {
     background-color: darkgreen;
 }
+
+.calculator {
+    padding-top: 20%;
+}
+
+span#num1-el,
+#num2-el {
+    border: 20%;
+
+}
