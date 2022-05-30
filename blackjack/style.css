@@ -31,3 +31,16 @@ h1 {
     border-radius: 2px;
     margin: 4px 0px;
 }
+
+div #apple-shelf {
+    background-color: greenyellow;
+    color: black;
+    padding: 15px 0px;
+    margin: 5px 0px;
+}
+
+#orange-shelf {
+    background-color: orange;
+    color: black;
+    padding: 15px 0px;
+}

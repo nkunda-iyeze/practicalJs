@@ -76,6 +76,88 @@ function newCard() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Practice Time 
 
-// let randomNumber = Math.floor((Math.random() * 6) + 1)
-// console.log(randomNumber);
+// challenge 1
+let person = {
+    name: "Nkunda Iyeze Shalom",
+    age: 27,
+    country: "Rwanda,Kigali"
+}
+
+function logData() {
+    return person.name + "  is " + person.age + " years old and lives in " + person.country;
+}
+let log = logData();
+console.log(log);
+
+// challenge 2
+
+let age = 29;
+if (age <= 6) {
+    console.log("Free Tickets");
+} else if (age > 6 && age <= 17) {
+    console.log("Child Discount Allowed !");
+} else if (age > 18 && age <= 26) {
+    console.log("Student Discount Allowed!");
+} else if (age > 27 && age <= 66) {
+    console.log("Full price!");
+} else {
+    console.log("Senior citizens discount");
+}
+// challenge 3
+
+let largeCountries = ["China", "India", "Usa", "Indonesia", "Pakistan"];
+for (let i = 0; i < largeCountries.length; i++) {
+    console.log("- " + largeCountries[i]);
+}
+// challenge 4
+let largeCountries2 = ["Tuvalu", "India", "Usa", "Indonesia", "Monaco"];
+console.log(largeCountries2);
+largeCountries2.pop();
+largeCountries2.shift();
+console.log(largeCountries2);
+largeCountries2.push("Pakistan");
+largeCountries2.unshift("China");
+console.log(largeCountries2);
+// challenge 5
+let dayOfMonth = 13;
+let weekDay = "Friday";
+if (dayOfMonth === 13 && weekDay === "Friday") {
+    console.log("This is Spooky face: 😱 !");
+} else {
+    console.log("This is Funny Face 😃 !");
+}
+// challenge 6
+let hands = ["rock", "paper", "scissor"];
+
+function randomHands() {
+    console.log(hands[Math.floor(Math.random() * hands.length - 1) + 1]);
+
+}
+randomHands();
+// challenge 7
+let fruits = ["Apple", "Orange", "Apple", "Apple", "Orange"];
+let appleShelf = document.getElementById("apple-shelf");
+let orangeShelf = document.getElementById("orange-shelf");
+
+function getApple() {
+    for (let i = 0; i < fruits.length; i++) {
+        if (fruits[i] === "Apple") {
+            appleShelf.textContent += fruits[i] + " , ";
+        } else {
+
+        }
+    }
+}
+
+function getOrange() {
+    for (let i = 0; i < fruits.length; i++) {
+        if (fruits[i] === "Orange") {
+            orangeShelf.textContent += fruits[i] + " , ";
+
+        } else {
+
+        }
+    }
+}
