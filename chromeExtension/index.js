@@ -1,11 +1,13 @@
-let myLeads = [];
+let myLeads = ["Good Morning", "Bonjour", "Mwaramutse", "Dobriden"];
 const inputEl = document.getElementById("input-el");
-
-
-
 const inputBtn = document.getElementById("input-btn");
+const ulEl = document.getElementById("ul-el");
 inputBtn.addEventListener("click", function () {
     // console.log("Add Event listener clicked !🥰");
-    myLeads.push("www.awesomelead.com");
+    myLeads.push(inputEl.value);
     console.log(myLeads)
 });
+
+for (let i = 0; i < myLeads.length; i++) {
+    console.log("* " + myLeads[i]);
+}
