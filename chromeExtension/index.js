@@ -11,3 +11,10 @@ inputBtn.addEventListener("click", function () {
 for (let i = 0; i < myLeads.length; i++) {
     ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
 }
+// practice
+const container = document.getElementById("container");
+container.innerHTML = "<button onclick=buy()> Buy ! </button> ";
+
+function buy() {
+    container.innerHTML += "<p> Thank you for buying with us ! </p>"
+}
