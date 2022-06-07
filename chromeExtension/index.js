@@ -9,12 +9,19 @@ inputBtn.addEventListener("click", function () {
 });
 
 for (let i = 0; i < myLeads.length; i++) {
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
+    // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
+    // create an element
+    const li = document.createElement("li");
+    // set text content
+    li.textContent = myLeads[i];
+    // append
+    ulEl.append(li);
+
 }
 // practice
-const container = document.getElementById("container");
-container.innerHTML = "<button onclick=buy()> Buy ! </button> ";
+// const container = document.getElementById("container");
+// container.innerHTML = "<button onclick=buy()> Buy ! </button> ";
 
-function buy() {
-    container.innerHTML += "<p> Thank you for buying with us ! </p>"
-}
+// function buy() {
+// container.innerHTML += "<p> Thank you for buying with us ! </p>"
+// }
