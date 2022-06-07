@@ -8,17 +8,24 @@ inputBtn.addEventListener("click", function () {
     console.log(myLeads)
 });
 
+let listItems = "";
+
 for (let i = 0; i < myLeads.length; i++) {
     // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
-    // create an element
-    const li = document.createElement("li");
-    // set text content
-    li.textContent = myLeads[i];
-    // append
-    ulEl.append(li);
+    listItems += "<li>" + myLeads[i] + "</li>";
+
+    console.log(listItems);
+    // // create an element
+    // const li = document.createElement("li");
+    // // set text content
+    // li.textContent = myLeads[i];
+    // // append
+    // ulEl.append(li);
 
 }
-// practice
+ulEl.innerHTML = listItems
+
+// practice 
 // const container = document.getElementById("container");
 // container.innerHTML = "<button onclick=buy()> Buy ! </button> ";
 
