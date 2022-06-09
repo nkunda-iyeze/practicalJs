@@ -23,3 +23,8 @@ function renderLeads() {
     }
     ulEl.innerHTML = listItems
 }
+// template string practice
+let name = "Shalom";
+const email = `Hey ${name} ! How is it going ?
+Cheers perls ! `;
+console.log(email);
