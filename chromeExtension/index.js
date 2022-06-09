@@ -24,7 +24,9 @@ function renderLeads() {
     ulEl.innerHTML = listItems
 }
 // template string practice
-let name = "Shalom";
+let name = "James";
+let sender = "Shalom"
 const email = `Hey ${name} ! How is it going ?
-Cheers perls ! `;
+Cheers ${ sender}
+`;
 console.log(email);
