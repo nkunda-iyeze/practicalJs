@@ -1,70 +1,44 @@
 let myLeads = [];
-// myLeads = JSON.parse(myLeads);
-// myLeads.push("www.google.com");
-// myLeads = JSON.stringify(myLeads);
-// console.log(typeof myLeads);
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
-
-// console.log(localStorage.getItem("myLeads"));
-// localStorage.clear();
-
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-// console.log(leadsFromLocalStorage);
+
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage;
-    renderLeads();
+    render(myLeads);
 }
 
-// console.log(deleteBtn);
-// delete button
-deleteBtn.addEventListener("dblclick", function () {
-    console.log("Hello dblclick");
-    localStorage.clear();
-    myLeads = [];
-    renderLeads();
-});
-// input button
-inputBtn.addEventListener("click", function () {
-    myLeads.push(inputEl.value);
-    inputEl.value = "";
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    // console.log(localStorage.getItem("myLeads"));
-    renderLeads();
-
-});
-
-function renderLeads() {
+function render(leads) {
     let listItems = "";
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
         listItems += `
         <li>
-        <a target='_blank' href='${myLeads[i]}'>
-        ${myLeads[i]}
+        <a target='_blank' href='${leads[i]}'>
+        ${leads[i]}
         </a>
         </li>
         `;
     }
     ulEl.innerHTML = listItems
 }
-// template string practice
 
 
-// let name = "James";
-// let sender = "Shalom"
-// const email = `Hey ${name} ! How is it going ?
-// Cheers ${ sender}
-// `;
-// console.log(email);
+// delete button
+deleteBtn.addEventListener("dblclick", function () {
+    localStorage.clear();
+    myLeads = [];
+    render(myLeads);
+});
 
 
-// Truthy and falsey (Guess the Expression)
-// console.log(Boolean("")); // falsey
-// console.log(Boolean("0")); // Truthy
-// console.log(Boolean(100)); // Truthy
-// console.log(Boolean(null)); // falsey
-// console.log(Boolean([0])); // Truthy
-// console.log(Boolean(-0)); // False 
+// input button
+inputBtn.addEventListener("click", function () {
+    myLeads.push(inputEl.value);
+    inputEl.value = "";
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+
+});
