@@ -24,7 +24,7 @@ button {
 #delete-btn {
     background-color: white;
     color: #5f9341;
-    border: 1px #5f9341 solid;
+    /* border: 1px #5f9341 solid; */
 }
 
 ul {
