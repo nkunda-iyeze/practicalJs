@@ -43,3 +43,12 @@ const email = `Hey ${name} ! How is it going ?
 Cheers ${ sender}
 `;
 console.log(email);
+
+
+// Truthy and falsey (Guess the Expression)
+console.log(Boolean("")); // falsey
+console.log(Boolean("0")); // Truthy
+console.log(Boolean(100)); // Truthy
+console.log(Boolean(null)); // falsey
+console.log(Boolean([0])); // Truthy
+console.log(Boolean(-0)); // False 
