@@ -51,7 +51,10 @@ const tabs = [{
     url: "https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
 }]
 tabBtn.addEventListener("click", function () {
-    console.log(tabs[0].url);
+    // save the tab url
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
 });
 
 // numbers as functions parameters practice
