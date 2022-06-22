@@ -42,3 +42,10 @@ inputBtn.addEventListener("click", function () {
     render(myLeads);
 
 });
+
+// numbers as functions parameters practice
+function add(number1, number2) {
+    return number1 + number2;
+}
+console.log(add(3, 4)); // should logout 7
+console.log(add(9, 102)); // should logout 111
