@@ -4,12 +4,15 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-
+const tabBtn = document.getElementById("tab-btn");
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage;
     render(myLeads);
 }
 
+
+
+// render function
 function render(leads) {
     let listItems = "";
     for (let i = 0; i < leads.length; i++) {
@@ -43,17 +46,25 @@ inputBtn.addEventListener("click", function () {
 
 });
 
+// tab button
+const tabs = [{
+    url: "https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
+}]
+tabBtn.addEventListener("click", function () {
+    console.log(tabs[0].url);
+});
+
 // numbers as functions parameters practice
 // parameters (number1, number2)
-function add(number1, number2) {
-    return number1 + number2;
-}
-// arguments (3,4),(9,102)
-console.log(add(3, 4)); // should logout 7
-console.log(add(9, 102)); // should logout 111
+// function add(number1, number2) {
+//     return number1 + number2;
+// }
+// // arguments (3,4),(9,102)
+// console.log(add(3, 4)); // should logout 7
+// console.log(add(9, 102)); // should logout 111
 
-// arrays as parameters
-function getFirst(arr) {
-    return arr[0];
-}
-console.log(getFirst([20, 30, 40]));
+// // arrays as parameters
+// function getFirst(arr) {
+//     return arr[0];
+// }
+// console.log(getFirst([20, 30, 40]));
