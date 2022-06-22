@@ -51,3 +51,9 @@ function add(number1, number2) {
 // arguments (3,4),(9,102)
 console.log(add(3, 4)); // should logout 7
 console.log(add(9, 102)); // should logout 111
+
+// arrays as parameters
+function getFirst(arr) {
+    return arr[0];
+}
+console.log(getFirst([20, 30, 40]));
