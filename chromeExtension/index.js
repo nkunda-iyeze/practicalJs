@@ -6,55 +6,59 @@ const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 const tabBtn = document.getElementById("tab-btn");
 if (leadsFromLocalStorage) {
-    myLeads = leadsFromLocalStorage;
-    render(myLeads);
+  myLeads = leadsFromLocalStorage;
+  render(myLeads);
 }
-
-
 
 // render function
 function render(leads) {
-    let listItems = "";
-    for (let i = 0; i < leads.length; i++) {
-        // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
-        listItems += `
+  let listItems = "";
+  for (let i = 0; i < leads.length; i++) {
+    // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
+    listItems += `
         <li>
         <a target='_blank' href='${leads[i]}'>
         ${leads[i]}
         </a>
         </li>
         `;
-    }
-    ulEl.innerHTML = listItems
+  }
+  ulEl.innerHTML = listItems;
 }
 
-
 // delete button
-deleteBtn.addEventListener("dblclick", function () {
-    localStorage.clear();
-    myLeads = [];
-    render(myLeads);
+deleteBtn.addEventListener("dblclick", function() {
+  localStorage.clear();
+  myLeads = [];
+  render(myLeads);
 });
 
-
 // input button
-inputBtn.addEventListener("click", function () {
-    myLeads.push(inputEl.value);
-    inputEl.value = "";
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    render(myLeads);
-
+inputBtn.addEventListener("click", function() {
+  myLeads.push(inputEl.value);
+  inputEl.value = "";
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+  render(myLeads);
 });
 
 // tab button
-const tabs = [{
+const tabs = [
+  {
     url: "https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
-}]
-tabBtn.addEventListener("click", function () {
-    // save the tab url
-    myLeads.push(tabs[0].url);
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    render(myLeads);
+  }
+];
+tabBtn.addEventListener("click", function() {
+  // grab the url of the current tab
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    // since only one tab should be active and in the current window at once
+    // the return variable should only have one entry
+    let activeTab = tabs[0];
+    let activeTabId = activeTab.id; // or do whatever you need
+  });
+  // save the tab url
+  myLeads.push(tabs[0].url);
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+  render(myLeads);
 });
 
 // numbers as functions parameters practice
