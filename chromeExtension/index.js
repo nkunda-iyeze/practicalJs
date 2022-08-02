@@ -42,23 +42,14 @@ inputBtn.addEventListener("click", function() {
 });
 
 // tab button
-const tabs = [
-  {
-    url: "https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
-  }
-];
+
 tabBtn.addEventListener("click", function() {
-  // grab the url of the current tab
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    // since only one tab should be active and in the current window at once
-    // the return variable should only have one entry
-    let activeTab = tabs[0];
-    let activeTabId = activeTab.id; // or do whatever you need
+    // save the tab url
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
   });
-  // save the tab url
-  myLeads.push(tabs[0].url);
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  render(myLeads);
 });
 
 // numbers as functions parameters practice
