@@ -27,14 +27,14 @@ function render(leads) {
 }
 
 // delete button
-deleteBtn.addEventListener("dblclick", function() {
+deleteBtn.addEventListener("dblclick", function () {
   localStorage.clear();
   myLeads = [];
   render(myLeads);
 });
 
 // input button
-inputBtn.addEventListener("click", function() {
+inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
   inputEl.value = "";
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
@@ -43,8 +43,11 @@ inputBtn.addEventListener("click", function() {
 
 // tab button
 
-tabBtn.addEventListener("click", function() {
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+tabBtn.addEventListener("click", function () {
+  chrome.tabs.query({
+    active: true,
+    currentWindow: true
+  }, function (tabs) {
     // save the tab url
     myLeads.push(tabs[0].url);
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
@@ -52,17 +55,20 @@ tabBtn.addEventListener("click", function() {
   });
 });
 
-// numbers as functions parameters practice
-// parameters (number1, number2)
-// function add(number1, number2) {
-//     return number1 + number2;
-// }
-// // arguments (3,4),(9,102)
-// console.log(add(3, 4)); // should logout 7
-// console.log(add(9, 102)); // should logout 111
 
-// // arrays as parameters
-// function getFirst(arr) {
-//     return arr[0];
-// }
-// console.log(getFirst([20, 30, 40]));
+// practice time 
+// Exercise 1 
+// SETTING THE STAGE
+const player = "per";
+const opponent = "Nick";
+const game = "AmazingFighter";
+let points = 0;
+let hasWon = false;
+//PLAYING THE GAME
+points += 100;
+hasWon = true;
+if (hasWon) {
+  console.log(`${player} got ${points} points and won the ${game} game !`);
+} else {
+  console.log(`The winner is ${opponent} ! ${player} Lost the game`);
+}
