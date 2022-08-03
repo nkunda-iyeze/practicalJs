@@ -72,3 +72,14 @@ if (hasWon) {
 } else {
   console.log(`The winner is ${opponent} ! ${player} Lost the game`);
 }
+
+// exercise 2
+// Log out items from an array 
+let myCourses = ["Learn CSS Animation", "UI Design Fundamentals", "Intro to Clean Code"];
+
+function getArray(course) {
+  for (let i = 0; i < course.length; i++) {
+    console.log(course[i]);
+  }
+}
+getArray(myCourses);
