@@ -89,3 +89,21 @@ getArray(myCourses);
 window.localStorage.setItem("name", "Nkunda Iyeze Shalom");
 // window.localStorage.clear();
 console.log(window.localStorage.getItem("name"));
+
+// exerice 4
+// addEventListener and object in array
+const score = document.getElementById("score");
+let data = [{
+    player: "Jana",
+    score: "52",
+
+  },
+  {
+    player: "Mark",
+    score: "41",
+  }
+];
+
+score.addEventListener("click", function () {
+  console.log(data[0].score);
+});
