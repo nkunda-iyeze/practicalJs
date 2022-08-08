@@ -90,7 +90,7 @@ window.localStorage.setItem("name", "Nkunda Iyeze Shalom");
 // window.localStorage.clear();
 console.log(window.localStorage.getItem("name"));
 
-// exerice 4
+// exercice 4
 // addEventListener and object in array
 const score = document.getElementById("score");
 let data = [{
@@ -105,5 +105,20 @@ let data = [{
 ];
 
 score.addEventListener("click", function () {
-  console.log(data[0].score);
+  // console.log(data[0].score);
 });
+// Exercise 4
+// Generate Sentence
+function generateSentence(desc, arr) {
+  let sentence = `The ${arr.length} ${desc} are `;
+  lastIndex = arr.length - 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (i === lastIndex) {
+      sentence += arr[i];
+    } else {
+      sentence += arr[i] + ",  ";
+    }
+  };
+  console.log(sentence);
+};
+generateSentence("Best Fruits", ["Banana", "Oranges", "Apples"]);
